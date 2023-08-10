@@ -1,13 +1,16 @@
 #!/bin/ksh
 
-rm -f hello_world_seq.x
+codname="hello_world_seq"
+
+rm -f ${codname}.x
 
 echo "Compilando..."
-gcc hello_world_seq.c -o hello_world_seq.x
+    gcc ${codname}.c -o ${codname}.x
+echo "Compilado!  ${codname}.x"
 
-echo "Compilado!"
 
-if [ ! -s hello_world_seq.x ] 
+
+if [ ! -s ${codname}.x ] 
 then
     echo "Deu ruim..."
 fi
