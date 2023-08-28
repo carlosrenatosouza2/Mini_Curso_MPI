@@ -28,15 +28,20 @@ int main(int argc, char const *argv[])
     // cada rank calcula a integral de sua parte:
     integral = trap(local_a, local_b, local_n, h);
         
-    if ( r == 0 ){ // rank 0 recebe o resultado de cada rank e soma tudo:
+    if ( r == 0 ) // rank 0 recebe o resultado de cada rank e soma tudo:
+    { 
         total = integral;
-        for ( source = 1; source < p; source ++){
+        for ( source = 1; source < p; source ++)
+        {
             MPI_Recv(&integral, 1, MPI_DOUBLE, source , tag, MPI_COMM_WORLD, &status);
             total = total + integral;
         }
-    } else { // outros ranks enviam seu resultado para o rank 0:
+    } 
+    else // outros ranks enviam seu resultado para o rank 0:
+    { 
         MPI_Send(&integral, 1, MPI_DOUBLE, dest, tag, MPI_COMM_WORLD);
     }
+
     // rank 0 imprime o resultado final:
     if ( r == 0 ) printf("\n Valor da integral definida eh: %6.4f\n ", total);
 
@@ -59,10 +64,12 @@ double trap(double local_a, double local_b, long int local_n, double h)
     integral = (f(local_a) + f(local_b)) / 2.0;
     x = local_a;
 
-    for (i = 1; i <= local_n-1; i++){
+    for (i = 1; i <= local_n-1; i++)
+    {
         x = x + h;
         integral = integral + f(x);
     }
+    
     integral = integral * h;
 
     return(integral);

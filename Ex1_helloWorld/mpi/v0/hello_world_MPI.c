@@ -4,12 +4,12 @@
 int main(int argc, char const *argv[])
 {
 
-    MPI_Init(NULL, NULL);
+   MPI_Init(NULL, NULL);
 
 
-    printf("\n Hello World \n"); 
+   printf("\n Hello World \n"); 
 
-    MPI_Finalize();
+   MPI_Finalize();
 
-    return 0;
+   return 0;
 }

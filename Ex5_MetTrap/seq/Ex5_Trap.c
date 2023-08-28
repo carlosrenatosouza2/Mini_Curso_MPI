@@ -15,7 +15,8 @@ int main(int argc, char const *argv[])
     integral = (f(a) + f(b)) / 2.0;
     x = a;
 
-    for (i = 1; i <= n-1; i++){
+    for (i = 1; i <= n-1; i++)
+    {
         x = x + h;
         integral = integral + f(x);
     }
