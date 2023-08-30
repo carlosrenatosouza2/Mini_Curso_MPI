@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Exemplo de erro numerico simples
+
 int main( int argc, char *argv[])
 {
    int k, n;
