@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
    if (r == mestre) 
    {
       for (i = 0; i < TAM; i++)
-         printf("vet_recebe[%d] = %3.1f ", i,vet_recebe[i]);
+         printf("vet_recebe[%d] = %3.1f \n", i,vet_recebe[i]);
       printf("\n\n"); 
    }
 

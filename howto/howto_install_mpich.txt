@@ -1,0 +1,13 @@
+Instalando MPICH manualmente:
+
+wget https://www.mpich.org/static/downloads/4.3.2/mpich-4.3.2.tar.gz
+
+tar -xzvf mpich-4.3.2.tar.gz
+
+cd mpich-4.3.2
+
+./configure --prefix=/opt/mpich-4.3.2
+
+Make
+
+make install
